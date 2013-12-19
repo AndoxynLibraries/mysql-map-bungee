@@ -41,7 +41,7 @@ public class SQLDatabaseConnection implements DatabaseConnection {
         this.sql = new AsyncSQL(plugin, logger, connectionInfo);
     }
 
-    public SQLDatabaseConnection(Plugin plugin, SQLConnectionInfo connectionInfo) throws Exception {
+    public SQLDatabaseConnection(Plugin plugin, SQLConnectionInfo connectionInfo) throws SQLException {
         this(plugin, plugin.getLogger(), connectionInfo);
     }
 
@@ -151,6 +151,10 @@ public class SQLDatabaseConnection implements DatabaseConnection {
                     statement.setString(1, key);
                     try {
                         ResultSet set = statement.executeQuery();
+                        if (!set.first()) {
+                            result.set(null);
+                            return;
+                        }
                         result.set(set.getInt("intValue"));
                     } finally {
                         statement.close();
