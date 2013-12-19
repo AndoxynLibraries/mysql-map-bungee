@@ -90,7 +90,7 @@ public class SQLDatabaseConnection implements DatabaseConnection {
                     statement.setString(1, key);
                     try {
                         ResultSet set = statement.executeQuery();
-                        result.set(set.getString(1));
+                        result.set(set.getString("stringValue"));
                     } finally {
                         statement.close();
                     }
@@ -147,7 +147,7 @@ public class SQLDatabaseConnection implements DatabaseConnection {
                     statement.setString(1, key);
                     try {
                         ResultSet set = statement.executeQuery();
-                        result.set(set.getInt(1));
+                        result.set(set.getInt("intValue"));
                     } finally {
                         statement.close();
                     }
