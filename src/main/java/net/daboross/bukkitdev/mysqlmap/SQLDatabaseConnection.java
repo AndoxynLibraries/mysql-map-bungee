@@ -90,6 +90,10 @@ public class SQLDatabaseConnection implements DatabaseConnection {
                     statement.setString(1, key);
                     try {
                         ResultSet set = statement.executeQuery();
+                        if (!set.first()) {
+                            result.set(null);
+                            return;
+                        }
                         result.set(set.getString("stringValue"));
                     } finally {
                         statement.close();
