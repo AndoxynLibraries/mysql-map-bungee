@@ -111,4 +111,8 @@ public class AsyncSQL {
             });
         }
     }
+
+    public void waitTillAllDone() {
+        taskScheduler.waitTillAllDone();
+    }
 }

@@ -59,6 +59,11 @@ public class SQLDatabaseConnection implements DatabaseConnection {
         return table;
     }
 
+    @Override
+    public void waitTillAllDone() {
+        sql.waitTillAllDone();
+    }
+
     @RequiredArgsConstructor
     @EqualsAndHashCode
     private class StringTable implements MapTable<String, String> {

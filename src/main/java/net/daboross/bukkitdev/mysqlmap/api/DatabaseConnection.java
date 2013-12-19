@@ -22,4 +22,6 @@ public interface DatabaseConnection {
     public MapTable<String, String> getStringToStringTable(String name);
 
     public MapTable<String, Integer> getStringToIntTable(String name);
+
+    public void waitTillAllDone();
 }

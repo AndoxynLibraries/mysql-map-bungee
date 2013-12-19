@@ -28,6 +28,7 @@ import net.md_5.bungee.api.plugin.Plugin;
 public class AsyncTaskScheduler implements Runnable {
 
     private final Queue<Runnable> queue = new LinkedList<Runnable>();
+    private final Object allDoneLock = new Object();
     @NonNull
     private final Plugin plugin;
     @NonNull
@@ -45,6 +46,19 @@ public class AsyncTaskScheduler implements Runnable {
         }
     }
 
+    public void waitTillAllDone() {
+        synchronized (queue) {
+            if (queue.isEmpty()) return;
+        }
+        synchronized (allDoneLock) {
+            try {
+                allDoneLock.wait();
+            } catch (InterruptedException ex) {
+                plugin.getLogger().log(Level.WARNING, "InterruptedException waiting for all sql to be done", ex);
+            }
+        }
+    }
+
     @Override
     public void run() {
         if (name != null) Thread.currentThread().setName(name);
@@ -53,6 +67,9 @@ public class AsyncTaskScheduler implements Runnable {
             synchronized (queue) {
                 next = queue.poll();
                 if (next == null) {
+                    synchronized (allDoneLock) {
+                        allDoneLock.notifyAll();
+                    }
                     try {
                         queue.wait();
                     } catch (InterruptedException ex) {
