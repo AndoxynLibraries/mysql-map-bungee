@@ -27,10 +27,11 @@ import lombok.RequiredArgsConstructor;
 import net.daboross.bungeedev.mysqlmap.api.DatabaseConnection;
 import net.daboross.bungeedev.mysqlmap.api.MapTable;
 import net.daboross.bungeedev.mysqlmap.api.ResultRunnable;
+import net.daboross.bungeedev.mysqlmap.api.SQLConnection;
+import net.daboross.bungeedev.mysqlmap.api.SQLRunnable;
 import net.daboross.bungeedev.mysqlmap.internal.AsyncSQL;
 import net.daboross.bungeedev.mysqlmap.internal.ResultHolder;
 import net.daboross.bungeedev.mysqlmap.internal.ResultSQLRunnable;
-import net.daboross.bungeedev.mysqlmap.api.SQLRunnable;
 import net.md_5.bungee.api.plugin.Plugin;
 
 public class SQLDatabaseConnection implements DatabaseConnection {
@@ -57,6 +58,11 @@ public class SQLDatabaseConnection implements DatabaseConnection {
         IntTable table = new IntTable(name);
         table.create();
         return table;
+    }
+
+    @Override
+    public SQLConnection getRawConnection() {
+        return sql;
     }
 
     @Override
