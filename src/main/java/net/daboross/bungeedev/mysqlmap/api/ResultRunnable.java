@@ -14,14 +14,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.daboross.bukkitdev.mysqlmap.api;
+package net.daboross.bungeedev.mysqlmap.api;
 
-@SuppressWarnings("UnusedDeclaration")
-public interface DatabaseConnection {
+public interface ResultRunnable<T> {
 
-    public MapTable<String, String> getStringToStringTable(String name);
-
-    public MapTable<String, Integer> getStringToIntTable(String name);
-
-    public void waitTillAllDone();
+    public void runWithResult(T value);
 }

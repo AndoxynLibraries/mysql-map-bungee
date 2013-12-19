@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.daboross.bukkitdev.mysqlmap;
+package net.daboross.bungeedev.mysqlmap;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -24,13 +24,13 @@ import java.util.logging.Logger;
 import lombok.EqualsAndHashCode;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
-import net.daboross.bukkitdev.mysqlmap.api.DatabaseConnection;
-import net.daboross.bukkitdev.mysqlmap.api.MapTable;
-import net.daboross.bukkitdev.mysqlmap.api.ResultRunnable;
-import net.daboross.bukkitdev.mysqlmap.internal.AsyncSQL;
-import net.daboross.bukkitdev.mysqlmap.internal.ResultHolder;
-import net.daboross.bukkitdev.mysqlmap.internal.ResultSQLRunnable;
-import net.daboross.bukkitdev.mysqlmap.internal.SQLRunnable;
+import net.daboross.bungeedev.mysqlmap.api.DatabaseConnection;
+import net.daboross.bungeedev.mysqlmap.api.MapTable;
+import net.daboross.bungeedev.mysqlmap.api.ResultRunnable;
+import net.daboross.bungeedev.mysqlmap.internal.AsyncSQL;
+import net.daboross.bungeedev.mysqlmap.internal.ResultHolder;
+import net.daboross.bungeedev.mysqlmap.internal.ResultSQLRunnable;
+import net.daboross.bungeedev.mysqlmap.api.SQLRunnable;
 import net.md_5.bungee.api.plugin.Plugin;
 
 public class SQLDatabaseConnection implements DatabaseConnection {
