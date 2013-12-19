@@ -31,7 +31,7 @@ import net.daboross.bukkitdev.mysqlmap.internal.AsyncSQL;
 import net.daboross.bukkitdev.mysqlmap.internal.ResultHolder;
 import net.daboross.bukkitdev.mysqlmap.internal.ResultSQLRunnable;
 import net.daboross.bukkitdev.mysqlmap.internal.SQLRunnable;
-import org.bukkit.plugin.Plugin;
+import net.md_5.bungee.api.plugin.Plugin;
 
 public class SQLDatabaseConnection implements DatabaseConnection {
 

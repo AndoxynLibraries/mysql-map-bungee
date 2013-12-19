@@ -22,7 +22,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import net.daboross.bukkitdev.mysqlmap.SQLConnectionInfo;
 import net.daboross.bukkitdev.mysqlmap.api.ResultRunnable;
-import org.bukkit.plugin.Plugin;
+import net.md_5.bungee.api.plugin.Plugin;
 
 public class AsyncSQL {
 
@@ -102,7 +102,7 @@ public class AsyncSQL {
 
     private <T> void runSync(final ResultRunnable<T> runWithResult, final T result) {
         if (runWithResult != null) {
-            plugin.getServer().getScheduler().runTask(plugin, new Runnable() {
+            plugin.getProxy().getScheduler().runAsync(plugin, new Runnable() {
                 @Override
                 public void run() {
                     runWithResult.runWithResult(result);

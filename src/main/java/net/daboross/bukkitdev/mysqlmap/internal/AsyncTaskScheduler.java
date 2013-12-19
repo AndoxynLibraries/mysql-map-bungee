@@ -22,7 +22,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
-import org.bukkit.plugin.Plugin;
+import net.md_5.bungee.api.plugin.Plugin;
 
 @RequiredArgsConstructor
 public class AsyncTaskScheduler implements Runnable {
@@ -32,10 +32,11 @@ public class AsyncTaskScheduler implements Runnable {
     private final Plugin plugin;
     @NonNull
     private final Logger logger;
+    @NonNull
     private final String name;
 
     public void start() {
-        plugin.getServer().getScheduler().runTaskAsynchronously(plugin, this);
+        plugin.getProxy().getScheduler().runAsync(plugin, this);
     }
 
     public void queueRunnable(Runnable toRun) {

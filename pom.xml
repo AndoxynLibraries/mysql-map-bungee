@@ -1,14 +1,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>net.daboross.bukkitdev</groupId>
-    <artifactId>mysql-map-bukkit</artifactId>
+    <groupId>net.daboross.bungeedev</groupId>
+    <artifactId>mysql-map-bungee</artifactId>
     <version>0.0.2-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>MySQL Map Bukkit</name>
-    <description>MySQL Library in java.</description>
-    <url>https://github.com/daboross/mysql-map-bukkit</url>
+    <name>MySQL Map Bungee</name>
+    <description>MySQL Library</description>
+    <url>https://github.com/daboross/mysql-map-bungee</url>
     <inceptionYear>2013</inceptionYear>
     <licenses>
         <license>
@@ -27,9 +27,9 @@
     </developers>
 
     <scm>
-        <url>https://github.com/daboross/mysql-map-bukkit.git</url>
-        <connection>scm:git:https://github.com/daboross/mysql-map-bukkit.git</connection>
-        <developerConnection>scm:git:git@github.com:daboross/mysql-map-bukkit.git</developerConnection>
+        <url>https://github.com/daboross/mysql-map-bungee.git</url>
+        <connection>scm:git:https://github.com/daboross/mysql-map-bungee.git</connection>
+        <developerConnection>scm:git:git@github.com:daboross/mysql-map-bungee.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
     <properties>
@@ -39,19 +39,15 @@
 
     <repositories>
         <repository>
-            <id>bukkit-repo</id>
-            <url>http://repo.bukkit.org/content/groups/public</url>
-        </repository>
-        <repository>
             <id>repo-daboross</id>
             <url>http://repo.daboross.net/</url>
         </repository>
     </repositories>
     <dependencies>
         <dependency>
-            <groupId>org.bukkit</groupId>
-            <artifactId>bukkit</artifactId>
-            <version>1.6.4-R2.0</version>
+            <groupId>net.md-5</groupId>
+            <artifactId>bungeecord-api</artifactId>
+            <version>1.6.4-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -63,7 +59,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>0.12.0</version>
+            <version>1.12.2</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
@@ -110,7 +106,7 @@
     </build>
 
     <issueManagement>
-        <url>https://github.com/daboross/mysql-map-bukkit/issues</url>
+        <url>https://github.com/daboross/mysql-map-bungee/issues</url>
         <system>Github Issues</system>
     </issueManagement>
     <distributionManagement>
